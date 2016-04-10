@@ -147,6 +147,10 @@ for filename in os.listdir(vhostspath):
 
 	out = scanDocRootForAuthType(config)
 	
+	if out == False:
+		if debug: 'out=False. Skipping.'
+		continue
+	
 	if out == None:
 		if debug: 'out=None. Skipping.'
 		continue
