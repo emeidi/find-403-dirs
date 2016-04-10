@@ -41,7 +41,7 @@ def extractVhostConfig(path):
 	
 	for param in params:
 		if not param in config:
-			print 'ERROR: ' + param + ' not found in ' + path
+			if debug: print 'ERROR: ' + param + ' not found in ' + path
 			return False
 	
 	return config
@@ -54,7 +54,7 @@ def scanDocRootForAuthType(config):
 	if debug: print 'retrieveFilesInDirectory() called.'	
 
 	if files == False:
-		print 'ERROR: retrieveFilesInDirectory() returned false for path ' + path
+		if debug: print 'ERROR: retrieveFilesInDirectory() returned false for path ' + path
 		return False
 	
 	if files == None:
@@ -101,7 +101,7 @@ def isProtectedDir(file):
 
 def retrieveFilesInDirectory(path,filename):
 	if not os.path.isdir(path):
-		print 'ERROR: ' + path + ' could not be found'
+		if debug: print 'ERROR: ' + path + ' could not be found'
 		return False
 
 	if debug: print 'Scanning path ' + path + ' for .htaccess files'
@@ -138,7 +138,7 @@ for filename in os.listdir(vhostspath):
 	config = extractVhostConfig(path)
 
 	if config == False:
-		print 'ERROR: config=False. Skipping.'
+		if debug: print 'ERROR: config=False. Skipping.'
 		print ''
 		continue
 	
