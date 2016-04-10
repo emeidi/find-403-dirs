@@ -139,7 +139,7 @@ for filename in os.listdir(vhostspath):
 
 	if config == False:
 		if debug: print 'ERROR: config=False. Skipping.'
-		print ''
+		if debug: print ''
 		continue
 	
 	if debug: print config
