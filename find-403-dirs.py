@@ -22,7 +22,7 @@ else:
 
 vhostspath='/etc/apache2/sites-enabled'
 params = ['ServerName','DocumentRoot']
-protections = ['AuthType','Deny from']
+protections = ['AuthType','Deny from','Require ip']
 
 def extractVhostConfig(path):
 	config = {}
